@@ -9,7 +9,6 @@ const Showcase = ({result}) => {
     }
         const tiktokRaw = result;
         const [downloaded, isDownloaded] = useState(false);
-        console.log(result);
         const download = async() =>{
             if(!tiktokRaw || !Array.isArray(tiktokRaw.video) || !tiktokRaw.video[0]){
                 console.error("Something went wrong")
