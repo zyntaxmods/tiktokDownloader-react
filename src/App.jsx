@@ -9,17 +9,22 @@ const App = () => {
   const getData = useCallback(async(user) =>{
     if(!user.trim()) return;
     setLoading(true);
-        const url = `https://tiktok-download-without-watermark.p.rapidapi.com/analysis?url=${user}&hd=1`;
+        const url = `https://tiktok-api15.p.rapidapi.com/index/Tiktok/getVideoInfo?url=${user}%2F&hd=1`;
 const options = {
 	method: 'GET',
 	headers: {
-		'x-rapidapi-key': 'bd3f9a0456msh1724c37c61f6b50p19b718jsn10baa672fdf0',
-		'x-rapidapi-host': 'tiktok-download-without-watermark.p.rapidapi.com'
+		'x-rapidapi-key': 'fddac2cc2emsh54d66c3425a468cp14354bjsn9753fb99c348',
+		'x-rapidapi-host': 'tiktok-api15.p.rapidapi.com'
 	}
 };
 
 try {
 	const response = await fetch(url, options);
+  if(!response.ok){
+    console.error("Failed fetching data");
+    setResult(null);
+    return;
+  }
 	const result = await response.json();
   setResult(result);
 } catch (error) {

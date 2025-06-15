@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 
 const Showcase = ({result}) => {
-    if(!result || !result.data.ai_dynamic_cover || !result.data.hdplay || !result.data.author.unique_id){
+    if(!result || !result?.data?.ai_dynamic_cover ||
+  !result?.data?.author?.unique_id ||
+  !result?.data?.hdplay){
         console.error("Something went wrong");
         return null;
     }
@@ -29,7 +31,7 @@ const Showcase = ({result}) => {
 }
   return (
     <div className='flex flex-col justify-center items-center bg-white w-[250px] h-auto m-[auto_auto] rounded-[10px] p-[10px_10px] shadow-[0px_0px_3px_black]'>
-        <img src={(tiktokRaw.ai_dynamic_cover) ? tiktokRaw.ai_dynamic_cover : "../assets/image.png"} loading='eager' alt="" className='w-[200px] h-[200px] rounded-[8px] pointer-events-none'/>
+        <img src={tiktokRaw.ai_dynamic_cover} loading='eager' alt="" className='w-[200px] h-[200px] rounded-[8px] pointer-events-none'/>
         <div>
             <p className='text-gray-600 text-[20px] font-[600] text-center' title={tiktokRaw.author.unique_id}>{tiktokRaw.author.unique_id}</p>
             <div className='flex flex-col gap-[10px]'>
