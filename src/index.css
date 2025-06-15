@@ -13,6 +13,9 @@ body{
 button{
     @apply bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 p-[7px_10px] rounded-[10px] cursor-pointer text-white font-[600] drop-shadow-[0px_0px_2px_black]
 }
+#loadingMsg{
+    @apply text-[15px] text-green-500 drop-shadow-[0px_0px_2px_black] font-[600]
+}
 @media screen and (max-width: 500px) {
     p{
         @apply text-[12px]

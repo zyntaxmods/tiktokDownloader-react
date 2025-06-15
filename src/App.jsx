@@ -9,12 +9,12 @@ const App = () => {
   const getData = useCallback(async(user) =>{
     if(!user.trim()) return;
     setLoading(true);
-        const url = `https://tiktok-downloader-download-tiktok-videos-without-watermark.p.rapidapi.com/index?url=${user}`;
+        const url = `https://tiktok-download-without-watermark.p.rapidapi.com/analysis?url=${user}&hd=1`;
 const options = {
 	method: 'GET',
 	headers: {
-		'x-rapidapi-key': '5d4bc41001msh8061d58e712e8ffp1520edjsn72515b36a183',
-		'x-rapidapi-host': 'tiktok-downloader-download-tiktok-videos-without-watermark.p.rapidapi.com'
+		'x-rapidapi-key': 'bd3f9a0456msh1724c37c61f6b50p19b718jsn10baa672fdf0',
+		'x-rapidapi-host': 'tiktok-download-without-watermark.p.rapidapi.com'
 	}
 };
 
